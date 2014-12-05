@@ -1,0 +1,63 @@
+
+<template name="adminLayout">
+
+  {{#if currentUser}}
+
+    <div class="adminLayout-lamp">
+
+      <a href="{{pathFor 'home'}}" class="adminLayout-logo">
+        <i class="_light fa fa-arrow-left"></i>
+        <span class="_logo">Impact</span>
+        <i class="_dark fa fa-arrow-left"></i>
+      </a>
+
+      <div class="adminLayout-tabs">
+        <a href="{{pathFor 'user_home'}}" class="adminLayout-tab {{activeIf impact.bulbs 'User' 'adminLayout-tabActive'}}"><i class="fa fa-user"></i></a>
+        <a href="{{pathFor 'content_home'}}" class="adminLayout-tab {{activeIf impact.bulbs 'Content' 'adminLayout-tabActive'}}"><i class="fa fa-pencil"></i></a>
+        <a href="{{pathFor 'site_home'}}" class="adminLayout-tab {{activeIf impact.bulbs 'Site' 'adminLayout-tabActive'}}"><i class="fa fa-cog"></i></a>
+      </div>
+
+      <div class="adminLayout-bulbs">
+        {{#each parsedBulbs}}
+          <div class="adminLayout-bulbGroup">
+            {{#each this}}
+              <a href="{{url}}" class="adminLayout-bulb {{activeIf ../../impact.bulb name 'adminLayout-bulbActive'}}">
+                <span class="adminLayout-bulbIcon"><i class="fa fa-{{icon}}"></i></span>
+                <span class="adminLayout-bulbTitle">{{title}}</span>
+              </a>
+              {{#if equals ../../impact.bulb name}}
+                {{#each subbulbs}}
+                  <a href="{{url}}" class="adminLayout-subbulb {{activeIf ../../../impact.subbulb name 'adminLayout-subbulbActive'}}">{{title}}</a>
+                {{/each}}
+              {{/if}}
+            {{/each}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="adminLayout-wrap">
+      <div class="adminLayout-box">
+
+        <div class="adminLayout-boxTopMenu">
+          <div class="ui mini buttons">
+            <a href="{{pathFor 'user_home'}}" class="ui button">{{currentUser.username}}</a>
+            <a href="/logout" class="ui button"><i class="sign out icon"></i></a>
+          </div>
+        </div>
+
+        <div class="adminLayout-boxContent">
+          {{> yield}}
+        </div>
+
+      </div>
+    </div>
+
+  {{else}}
+    NOT AN ADMIN?
+    {{loginButtons}}
+  {{/if}}
+  
+</template>
+
+

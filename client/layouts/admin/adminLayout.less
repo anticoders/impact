@@ -1,0 +1,229 @@
+
+@import '../_.lessimport';
+
+@panelWidth:    160px;
+@contentWidth:  720px;
+
+@black:     rgba(0, 0, 0, 0.6);
+@orange:    #ff6600;
+
+
+.adminLayout-lamp {
+  position:     fixed;
+  left:         0px;
+  top:          0px;
+  width:        @panelWidth;
+  height:       100%;  
+  text-align:   center;
+  /*background:   url('/packages/impact_impact/files/subtle/kindajean.png');*/
+  /*box-shadow:   -20px 0px 20px -20px rgba(0,0,0,0.25) inset;*/
+  box-shadow:   -80px 0px 80px -80px rgba(0, 0, 0, 0.1) inset,
+                -5px 0px 5px -5px rgba(0, 0, 0, 0.25) inset;
+
+}
+/*
+.adminLayout-user {
+  text-align: right;
+  background: rgba(0,0,0,0.2);
+}
+
+.adminLayout-user a {
+  color: @black;
+  display: inline-block;
+  padding: 1px;
+
+  &:focus {
+    color: @black;
+  };
+
+  &:hover, &:active {
+    color: @orange;
+  };
+}*/
+
+.adminLayout-logo {
+  font-family: Lobster;
+  font-size: 16px;
+  
+  display: block;
+  padding: 5px 0px 20px;
+  cursor: pointer;
+
+  background: rgba(0,0,0,0.1);
+
+  & ._logo {
+    color: @black;
+  }
+
+  & ._light, & ._dark {
+    color: rgba(0,0,0,0);
+  }
+
+  &:hover, &:active {
+    text-decoration: none;
+
+    & ._light, & ._logo {
+      color: @orange;
+    }
+    & ._dark {
+      color: rgba(0,0,0,0);
+    }
+  }
+}
+
+.adminLayout-tabs {
+  /*border-bottom: 4px solid rgba(0,0,0,0.4);*/
+  height: 40px;
+  font-size: 0px;
+  background: rgba(0,0,0,0.1);
+}
+
+.adminLayout-tab {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  line-height: 40px;
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  text-align: center;
+  color: @black;
+
+  cursor: pointer;
+
+  &:focus {
+    color: @black;
+  };
+
+  &:hover, &:active {
+    color: @orange;
+  };
+
+}
+
+.adminLayout-tabActive {
+  /*color: @orange; */
+  background: #f7f7f7;
+  /*border: 1px solid #787c80;*/
+  /*border-bottom: 4px solid @orange;*/
+}
+
+
+
+
+
+
+
+
+.adminLayout-bulbs {
+  text-align: center;
+}
+
+.adminLayout-bulbGroup {
+  padding-top: 20px;
+}
+
+.adminLayout-bulb {
+  display: block;
+  position: relative;
+  width: @panelWidth;
+  height: 20px;
+  line-height: 20px;
+  text-align: left;
+  
+
+  color: @black;
+  font-size: 0px;
+    
+  &:hover, &:active, &:focus {
+    text-decoration: none;
+    color: @orange;
+  }
+
+}
+
+.adminLayout-bulbActive {
+  color: @orange;
+}
+
+.adminLayout-bulbIcon {
+  display: inline-block;
+  width: 40px;
+  text-align: center;
+  font-size: 16px;
+  margin: 0px;
+}
+
+.adminLayout-bulbTitle {
+  display: inline-block;
+  text-align: left;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+
+.adminLayout-subbulb {
+  display: block;
+  position: relative;
+  width: @panelWidth;
+  height: 20px;
+  line-height: 20px;
+  text-align: left;
+  
+
+  color: @black;
+  font-size: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+
+  padding: 0px 0px 0px 48px;
+
+    
+  &:hover, &:active, &focus {
+    text-decoration: none;
+    color: @orange;
+  }
+}
+
+.adminLayout-subbulbActive {
+  color: @orange;
+}
+
+
+
+
+
+
+
+.adminLayout-wrap {
+  padding: 0px 20px 0px 180px;
+}
+
+
+.adminLayout-boxTopMenu {
+  text-align: right;
+  height: 30px;
+  line-height: 30px;
+  cursor: default;
+/*  text-align: right;
+  padding: 0px 20px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 0px;
+  cursor: default;
+
+  
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;*/
+}
+
+.adminLayout-box {
+  /*position: relative;*/
+  max-width: @contentWidth;
+  margin: 0px auto 80px;
+  /*background: rgba(255,0,0,0.125);*/
+  /*background: #c0c0c0;*/
+}
